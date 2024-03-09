@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .noselect 
+        {
+            -webkit-touch-callout: none; 
+            -webkit-user-select: none; 
+            -khtml-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+            user-select: none; 
+        }
+    </style>
+</head>
+<body>
+    <br>
+        <table border="1" width="100%" cellspacing="0" class="noselect">
+            <th>Name</th>
+            <th>Category</th>
+            <th>Mathematics</th>
+            <th>Physics</th>
+            <th>Chemistry</th>
+            <th>Electrical</th>
+            <th>Electronics</th>
+            <th colspan="2">Action</th>
+            <tr>
+                <Td rowspan="2">{{s1.uname}}</Td>
+                <Td>Test 1</Td>
+                <Td>{{s1.um}}</Td>
+                <Td>{{s1.uphy}}</Td>
+                <Td>{{s1.uchem}}</Td>
+                <Td>{{s1.uelec}}</Td>
+                <Td>{{s1.uelex}}</Td>
+                <!-- <td><a href='deleteS?sr={{s1.uname}}'>DELETE</a></td> -->
+                <td rowspan="2"><a href='updateSR?sr1={{s1.uname}}'>UPDATE</a></td>
+            </tr>
+            <tr>
+                <Td>Test 2</Td>
+                <Td>{{s1.um2}}</Td>
+                <Td>{{s1.uphy2}}</Td>
+                <Td>{{s1.uchem2}}</Td>
+                <Td>{{s1.uelec2}}</Td>
+                <Td>{{s1.uelex2}}</Td>
+                <!-- <td><a href='deleteS?sr={{s1.uname}}'>DELETE</a></td> -->            
+            </tr>
+        </table><br><br>
+</body>
+</html>

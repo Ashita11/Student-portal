@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student Details</title>
+    <style>
+        body
+        {
+            background-color: antiquewhite;
+            background-image: url("https://2.bp.blogspot.com/-iTsKPqPRKng/UupwJXKIpXI/AAAAAAAAA6g/-HbcWMaDmPw/s1600/1.jpg");
+            background-size: cover;
+        }
+        input
+        {
+            width: 150px;
+            height: 25px;
+        }
+        /* submit
+        {
+            height: 30px;
+        } */
+        label
+        {
+            font-size: large;
+        }
+        div
+        {
+            background-image: linear-gradient(#687a52,#e8c857,#bf8426);
+            display: inline-block;
+            width: 400px;
+            height: 500px;
+            border: groove 0px;
+            position: relative;
+            top: 40px;
+            left: 37%;
+            text-align: center;
+        }
+        span
+        {
+            display: inline-block;
+            width: 160px;
+            padding-left: 20px;
+        }
+        #ii
+        {
+            height: 30px;
+        }
+        h1
+        {
+            text-align: center;
+        }
+    </style>
+        
+</head>
+<body>
+    
+    <h1>UPDATE MARKS</h1>
+    <div>
+        <form method='post' action="upsaveSR">
+            {% csrf_token %}
+            <br><br>
+            <label>Name </label><input type="text" value="{{s.uname}}" name="n" readonly><br>
+            <span>
+                <h3>Test 1</h3>
+                <!-- <label>Roll number </label><input type="number" value="{{s.uroll}}" name="r" readonly><br> -->
+                <!-- <label>Name </label><input type="text" value="{{s.uname}}" name="n" readonly><br> -->
+                <label>Mathematics</label> <input type="text" value="{{s.um}}" name="m"><br>
+                <label>Physics</label><input type="text" value="{{s.uphy}}" name="p"><br>
+                <label>Chemistry</label><input type="text" value="{{s.uchem}}" name="c"><br>
+                <label>Electrical</label><input type="text" value="{{s.uelec}}" name="el"><br>
+                <label>Electronics</label><input type="text" value="{{s.uelex}}" name="ex"><br>
+            </span>
+            <span>
+                <h3>Test 2</h3>
+                <!-- <label>Roll number </label><input type="number" value="{{s.uroll}}" name="r" readonly><br> -->
+                <!-- <label>Name </label><input type="text" value="{{s.uname}}" name="n" readonly><br> -->
+                <label>Mathematics</label> <input type="text" value="{{s.um2}}" name="m2"><br>
+                <label>Physics</label><input type="text" value="{{s.uphy2}}" name="p2"><br>
+                <label>Chemistry</label><input type="text" value="{{s.uchem2}}" name="c2"><br>
+                <label>Electrical</label><input type="text" value="{{s.uelec2}}" name="el2"><br>
+                <label>Electronics</label><input type="text" value="{{s.uelex2}}" name="ex2"><br>
+            </span><br><br>
+            
+            <input type="submit" id="ii">
+        </form>
+    </div>  
+</body>
+</html>

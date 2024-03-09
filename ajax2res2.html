@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table
+        {
+            border: 2px solid white;
+            position: relative;
+            left: 45%;
+        }
+        #id5
+        {
+            font-size: xx-large;
+            height: 10px;
+            width: 10px;
+            border: 2px solid white;
+        }
+        .noselect 
+        {
+            -webkit-touch-callout: none; 
+            -webkit-user-select: none; 
+            -khtml-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+            user-select: none; 
+        }
+        h2{
+            position: relative;
+            left: 30%;
+        }
+        /* table{
+            position: relative;
+            left: 45%;
+        } */
+    </style>
+</head>
+<body>
+   <h2 class="noselect">{{v}}</h2><br>
+   <table border="1" height="50%" width="70%" cellspacing="10" class="noselect">
+        <tr>
+            <td id="id5">Mathematics</td>
+            <td id="id5">{{s1.um2}}</td>
+        </tr>
+        <tr>
+            <td id="id5">Physics</td>
+            <td id="id5">{{s1.uphy2}}</td>
+        </tr>
+        <tr>
+            <td id="id5">Chemistry</td>
+            <td id="id5">{{s1.uchem2}}</td>
+        </tr>
+        <tr>
+            <td id="id5">Electrical</td>
+            <td id="id5">{{s1.uelec2}}</td>
+        </tr>
+        <tr>
+            <td id="id5">Electronics</td>
+            <td id="id5">{{s1.uelex2}}</td>
+        </tr>
+   </table>
+</body>
+</html>

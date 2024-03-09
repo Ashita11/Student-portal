@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FEES</title>
+  <style>
+    h1 {
+      display: block;
+      width: 100%;
+      text-align: center;
+      top: 50%;
+      /* font-style: italic; */
+      color: whitesmoke;
+      font-style: inherit;
+    }
+
+    body {
+      background-image: url('https://c1.wallpaperflare.com/preview/614/722/461/dark-books-pages-paper.jpg');
+      background-size: cover;
+    }
+
+    #id1 {
+      color: white;
+      text-decoration: none;
+      font-size: x-large;
+
+    }
+
+    #id2 {
+      position: relative;
+      font-size: xx-large;
+      top: 10px;
+      text-align: center;
+      height: 40px;
+      width: 9%;
+      color: antiquewhite;
+      font-style: italic;
+    }
+
+    #id3 {
+      position: relative;
+      top: 40px;
+      text-align: center;
+    }
+    #id4{
+      position: relative;
+      background-color: rgba(250, 235, 215, 0.29);
+      top: 80px;
+      height: 300px;
+      left:25%;
+      width: 50%;
+      border-radius: 50px;
+    }
+    .noselect 
+        {
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+        }
+  </style>
+</head>
+
+<body>
+  <h1 class="noselect"><b><u>Fees Portal:</u></b></h1>
+  <div class="noselect" id="id4">
+    <div id="id3">
+      <label id="id2">Amount Paid : {{s1.upaid}}</label>
+      <!-- (AMOUNT PAID) FROM DATABSE -->
+    </div>
+    <br><br>
+    <div class="noselect" id="id3">
+      <label id="id2">College dues : {{s1.upending}}</label>
+      <!-- 1,07,325- (AMOUNT PAID) -->
+    </div>
+    <br><br>
+    <div class="noselect" id="id3">
+      <label id="id2">Fines : {{s1.ufine}}</label>
+      <!-- Hostal/Other fines -->
+    </div>
+  </div>
+</body>
+
+</html>

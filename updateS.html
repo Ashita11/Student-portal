@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <style>
+        body
+        {
+            /* background-color: antiquewhite; */
+            background-image: url('https://media.istockphoto.com/vectors/abstract-form-background-vector-id1160194662?b=1&k=20&m=1160194662&s=170667a&w=0&h=clKinC7TCRhYw4g5EfE-UwVI5I52UVdUQf0G2x03PaU=');
+            background-size: cover;
+        }
+        input
+        {
+            width: 300px;
+            height: 25px;
+        }
+        label
+        {
+            font-size: large;
+        }
+        div
+        {
+            background-color: gray;
+            display: inline-block;
+            width: 400px;
+            height: 550px;
+            border: black solid;
+            position: relative;
+            top: 30px;
+            left: 37%;
+            text-align: center;
+        }
+        h1
+        {
+            text-align: center;
+            color: white;
+        }
+    </style>
+        
+</head>
+<body>
+    <h1>UPDATE DETAILS</h1>
+    <div>
+        <form method='post' action="upsave">
+            {% csrf_token %}
+            <br><label>Roll number </label><br><input type="number" value="{{s.uroll}}" name="r" readonly><br>
+            <br><label>Name </label><br><input type="text" value="{{s.uname}}" name="n"><br>
+            <br><label>Email</label> <br><input type="email" value="{{s.uemail}}" name="e"><br>
+            <br><label>Contact</label><br><input type="tel" value="{{s.umob}}" name="m"><br>
+            <br><label>Branch</label><br><input type="text" value="{{s.ubranch}}" name="b"><br>
+            <br><label>Amount paid</label><br><input type="number" value="{{s.upaid}}" name="p"><br>
+            <br><label>Fines</label><br><input type="number" value="{{s.ufine}}" name="f"><br>
+            <br><input type="submit" height="40px">
+        </form>
+    </div>
+    
+</body>
+</html>

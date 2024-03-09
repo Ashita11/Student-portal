@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" 
+crossorigin="anonymous"></script> 
+    <style>
+        table{
+            text-align: center;
+        }
+        #Input {
+            /* background-image: url('https://png.pngtree.com/png-vector/20190115/ourmid/pngtree-vector-search-icon-png-image_320926.jpg'); */
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+        .noselect 
+        {
+            -webkit-touch-callout: none; 
+            -webkit-user-select: none; 
+            -khtml-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+            user-select: none; 
+        }
+        
+        #id
+        {
+          position: relative;
+          left: 93%;  
+        }
+
+        .a{
+          color: #000;
+          text-decoration: none;
+          font-size: large;
+        }
+        .a:hover
+        {
+          color: white;
+        }
+        a{
+          color: #000;
+          text-decoration: none;
+          font-size: large;
+        }
+        body
+        {
+          background-image: linear-gradient(to right,black,rgb(128, 116, 116))
+        }
+        th,td,a
+        {
+          color: aliceblue;
+        }
+   </style>
+    <script>
+        function myFunction() 
+        {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("Input");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("Table");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) 
+          {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) 
+            {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) 
+              {
+                tr[i].style.display = "";
+              } 
+              else 
+              {
+                tr[i].style.display = "none";
+              }
+            }       
+          }
+        }
+        function fun(val)
+        {
+          obj=new XMLHttpRequest();
+          // val=request.GET('r').value;
+          obj.onreadystatechange=function(){
+            if(this.readyState==4 && this.status==200)
+            {
+              document.getElementById('c3').innerHTML=this.responseText;
+            }
+          };
+          obj.open('GET',/*'ajax2?val='+val*/'ajax?val='+val,true);
+          obj.send();
+        }
+        </script>
+</head>
+<body>
+  <button id='id' class="btn btn-primary" type="button" ><a class="a" href='tlogout'>Log out</a></button>
+  <div id="c3"></div>
+
+    <input type="text" id="Input" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+    <table border="5" width="100%" cellspacing="0" id="Table" class="noselect">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Roll Number</th>
+        <th>Contact</th>
+        <th>Branch</th>
+        <th>Amount paid</th>
+        <th>Fines</th>
+        <th>View more</th>
+        <th colspan="2">Action</th>
+        {% for record in s %}
+        
+        <tr>
+            <Td>{{ record.uname }}</Td>
+            <Td>{{ record.uemail }}</Td>
+            <Td>{{ record.uroll }}</Td>
+            <td>{{ record.umob }}</td>
+            <td>{{ record.ubranch }}</td>
+            <td>{{ record.upaid }}</td>
+            <td>{{ record.ufine }}</td>
+            <!-- <Td><a href="ajax?r={{record.uroll}}" id="v1" onclick="fun()">SEE</a></Td> -->
+            <Td><input type="button" id="v1" onclick="fun('{{ record.uname }}')" value="SEE"></Td>
+            <td><a href='deleteS?sr={{record.uroll}}'>DELETE</a></td>
+            <td><a href='updateS?sr1={{record.uroll}}'>UPDATE</a></td>
+        </tr>
+        
+        {% endfor %}
+        <!-- <td colspan="10"><a href="formmm">ADD</a></td> -->
+        <tr><td colspan="10"><a href="upattend">Update Attendance</a></td></tr>
+    </table>
+        <br><br><br>
+</body>
+</html>
